@@ -1,0 +1,23 @@
+﻿<%
+dim langSMS(30)
+langSMS(1)  = "短信验证码:{$sms_code}(注册会员)，请不要将此验证码告诉任何人，如非本人操作请忽略."
+langSMS(2)  = "短信验证码:{$sms_code}(找回密码)，请不要将此验证码告诉任何人，如非本人操作请忽略."
+langSMS(3)  = "短信验证码:{$sms_code}(绑定手机)，请不要将此验证码告诉任何人，如非本人操作请忽略."
+langSMS(4)  = ""
+langSMS(5)  = ""
+langSMS(6)  = ""
+langSMS(7)  = ""
+langSMS(8)  = ""
+langSMS(9)  = "亲，恭喜您注册成为新会员，获赠{$order_sms_reg_give_point}积分，请在会员中心我的积分中查看！"
+langSMS(10) = "亲，恭喜您注册成为新会员，获赠{$order_sms_reg_give_money}元现金，请在会员中心我的余额中查看！"
+langSMS(11) = "新订单号：{$order_sms_order_id}，总金额：{$order_sms_total_amount}元，会员：{$order_sms_username}({$order_sms_nickname})，订购商品：{$order_sms_goods_info}"
+langSMS(12) = "亲，您订购的商品：{$order_goods}，可以支付尾款了，请在{$book_final_pay_time}前支付！"
+langSMS(13) = "自提订单号：{$sms_order_id}，订单金额：{$sms_order_money}，会员：{$sms_username}（{$sms_order_formdata}）"
+langSMS(14) = "订单已支付，订单号：{$order_sms_order_id}，总金额：{$order_sms_total_amount}元，会员：{$order_sms_username}({$order_sms_nickname})，订购商品：{$order_sms_goods_info}"
+langSMS(15) = "亲，您的订单已支付，订单号：{$order_sms_order_id}，总金额：{$order_sms_total_amount}元，订购商品：{$order_sms_goods_info}"
+langSMS(16) = "亲，您的订单已发货，订单号：{$order_sms_order_id}，物流公司：{$order_sms_dly_corp_name}，运单号：{$order_sms_express_no}"
+langSMS(17) = "恭喜您参与分销推广获得佣金{$sms_commission_money}元，请等待发放到账，继续加油吧！"
+langSMS(18) = "亲，您的佣金提现{$sms_commission_drawcash_money}元已转账，请及时查收！"
+langSMS(19) = ""
+langSMS(20) = ""
+%>

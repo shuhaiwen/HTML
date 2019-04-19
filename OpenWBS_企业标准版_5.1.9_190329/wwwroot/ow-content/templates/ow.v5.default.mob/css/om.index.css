@@ -1,0 +1,57 @@
+﻿@charset "utf-8";
+
+.ow-banner{ background-color:#fff; clear:both; position:static;}
+.ow-banner .slidebox{ margin:0px auto; overflow:hidden; position:relative; }
+.ow-banner .slidebox > .header{ height:18px; line-height:18px; position:absolute; bottom:0px; z-index:2; text-align:center; width:100%; text-align:center; }
+.ow-banner .slidebox > .header li{ background:#ccc; -webkit-border-radius:6px; -moz-border-radius:6px; border-radius:6px; display:inline-block; width:6px; height:6px; margin:0px 3px; text-indent:-9999px; overflow:hidden;}
+.ow-banner .slidebox > .header li.on{ background:#d60000; }
+.ow-banner .slidebox > .section{ position:relative; z-index:1; text-align:center; width:100%; }
+.ow-banner .slidebox > .section ul{}
+.ow-banner .slidebox > .section ul li{ position:relative; text-align:center;  }
+.ow-banner .slidebox > .section ul li img{ background:url("../images/loading.gif") center center no-repeat; vertical-align:top; width:100%;}
+.ow-banner .slidebox > .section ul li a{ -webkit-tap-highlight-color:rgba(0,0,0,0); }
+
+/**产品与服务**/
+.ow-idx-product{ background-color:#fff; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; margin-top:10px; }
+.ow-idx-product .header{ font-size:14px; font-weight:normal; line-height:24px; padding:5px 15px;}
+.ow-idx-product .cates{ border-top:1px solid #eee; height:40px; margin:0px 15px; overflow-x:scroll;}
+.ow-idx-product .cates ul{ height:40px;}
+.ow-idx-product .cates ul li{ display:inline;}
+.ow-idx-product .cates ul li a{ color:#333; display:inline-block; font-size:15px; font-weight:bold; height:24px; line-height:24px; padding:8px 15px 8px 10px;}
+.ow-idx-product .cates ul li a:hover{ background-color:#2993df; border-color:#2993df; color:#fff; text-decoration:none;}
+.ow-idx-product .section{ padding:0px 15px;}
+
+/**案例**/
+.ow-idx-case{ background-color:#fff; border-top:1px solid #e6e6e6; margin-top:10px; }
+.ow-idx-case .header{ padding:5px 15px;}
+.ow-idx-case .header h2{ font-size:14px; font-weight:normal; line-height:24px;}
+.ow-idx-case .header .summary{ color:#888;}
+.ow-idx-case .cates{ background-color:#fff; border-top:1px solid #eee; height:40px; margin:0px 15px; overflow-x:scroll;}
+.ow-idx-case .cates ul{ height:40px;}
+.ow-idx-case .cates ul li{ display:inline;}
+.ow-idx-case .cates ul li a{ color:#333; display:inline-block; font-size:15px; font-weight:bold; height:24px; line-height:24px; padding:8px 15px 8px 10px;}
+.ow-idx-case .cates ul li a:hover{ background-color:#2993df; border-color:#2993df; color:#fff; text-decoration:none;}
+.ow-idx-case .section{ background:#334259; padding:5px 15px 5px 0px;}
+.ow-idx-case .section .case-wrapper{ overflow-x:scroll;}
+ul.ow-case-vertilist{ zoom:1; overflow:auto;}
+ul.ow-case-vertilist li{ float:left; padding:10px 0px 10px 15px; width:130px;}
+ul.ow-case-vertilist li a{ background:#fff; display:block; zoom:1; overflow:auto; text-align:center; -webkit-box-shadow:0px 0px 2px 1px rgba(0,0,0,0.1); -moz-box-shadow:0px 0px 2px 1px rgba(0,0,0,0.1); box-shadow:0px 0px 2px 1px rgba(0,0,0,0.1);}
+ul.ow-case-vertilist li .thumb{ height:80px; width:130px; text-align:center; overflow:hidden;}
+ul.ow-case-vertilist li .thumb img{ vertical-align:top;}
+ul.ow-case-vertilist li .info{ margin:8px 0px;}
+ul.ow-case-vertilist li .title{ color:#222; font-size:14px; font-weight:normal; max-height:48px; line-height:24px; overflow:hidden;}
+ul.ow-case-vertilist li .subtitle{ color:#888; font-size:12px; max-height:36px; line-height:18px; overflow:hidden; padding:0px 10px; text-overflow:ellipsis;}
+@media (min-width:500px) {
+	ul.ow-case-vertilist li{ width:180px;}
+	ul.ow-case-vertilist li .thumb{ height:110px; width:180px; text-align:center;}
+}
+
+/**新闻**/
+.ow-idx-news{ background-color:#fff; border-top:1px solid #e6e6e6; margin-top:10px; }
+.ow-idx-news .header{ font-size:14px; font-weight:normal; line-height:24px; padding:5px 15px;}
+.ow-idx-news .cates{ border-top:1px solid #eee; height:40px; margin:0px 15px; overflow-x:scroll;}
+.ow-idx-news .cates ul{ height:40px;}
+.ow-idx-news .cates ul li{ display:inline;}
+.ow-idx-news .cates ul li a{ color:#333; display:inline-block; font-size:15px; font-weight:bold; height:24px; line-height:24px; padding:8px 15px 8px 10px;}
+.ow-idx-news .cates ul li a:hover{ background-color:#2993df; border-color:#2993df; color:#fff; text-decoration:none;}
+.ow-idx-news .section{ background:#f4f4f4; padding:10px 10px 10px 10px;}

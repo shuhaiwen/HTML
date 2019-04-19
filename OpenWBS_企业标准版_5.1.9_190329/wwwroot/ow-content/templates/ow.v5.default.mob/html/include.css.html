@@ -1,0 +1,15 @@
+<meta name="runtime" content="{$runtime}" />
+<meta name="queries" content="{$sqlquerynum}" />
+<link rel="shortcut icon" href="{$config(site_favicon)}"/>
+<link rel="stylesheet" href="../css/om.global.css?v={$version_sn}" />
+<link rel="stylesheet" href="../css/om.main.css?v={$version_sn}" />
+<link rel="stylesheet" href="../css/om.mobile.css?v={$version_sn}" />
+<link rel="stylesheet" href="../css/om.owcmt.css?v={$version_sn}" />
+<script type="text/javascript" src="{$site_path}ow-content/js/mobile/jquery.js?v={$version_sn}"></script>
+<script type="text/javascript" src="{$site_path}ow-content/js/mobile/ow.js?v={$version_sn}"></script>
+<script type="text/javascript" src="{$site_path}ow-content/js/mobile/com.js?v={$version_sn}"></script>
+<script type="text/javascript" src="../js/touchslide.1.1.js"></script>
+{$ow.js.cfg}
+<% if OS.isJWeixinCanUse then %>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<% end if %>

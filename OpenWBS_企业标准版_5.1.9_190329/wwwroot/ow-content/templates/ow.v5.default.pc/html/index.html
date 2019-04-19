@@ -1,0 +1,197 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{$title}</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<meta name="generator" content="openwbs {$version}" />
+<meta name="author" content="openwbs team" />
+<meta name="copyright" content="2008-2020 OpenWBS Inc." />
+<!--#include file="include.css.html"-->
+<link rel="stylesheet" href="../css/ow.index.css?v={$version_sn}" />
+</head>
+<body>
+<!--头部{-->
+<!--#include file="include.header.html"-->
+<div class="ow-main-banner">{ad id="1" type="html"}</div>
+<div class="ow-notice" id="ow_notice">{$notice}</div>
+
+<div id="mbody">
+    <!--产品列表-->
+    <div class="ow-idx-product" id="ow_product">
+        <div class="wrapper">
+            <h2 class="header">{%=OW.DB.getFieldValueBySQL("SELECT [name] FROM ow_category WHERE cate_id=3 AND "& OW.DB.auxSQL &"")%}</h2>
+            <div class="cates">
+                {cate top="6" parent_id="3"}
+                <ul>
+                    {cate:loop}<li><a href="[cate:link]">[cate:name]</a></li>{/cate:loop}
+                </ul>
+                {/cate}
+            </div>
+            <div class="section" id="ow_product_list">
+                {content top="20" position_id="2" model="product"}
+                <ul class="ow-idx-product-list">
+                    {content:loop}
+                    <li class="li[content:i]">
+                        <div class="thumb"><a href="[content:link]"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]" /></a></div>
+                        <div class="info">
+                            <h3 class="title"><a href="[content:link]">[content:ctitle]</a></h3>
+                            <div class="subtitle">[content:subtitle]</div>
+                        </div>
+                    </li>
+                    {/content:loop}
+                </ul>
+                {/content}
+            </div>
+            <div class="ow-idx-more"><a href="{$site_hurl}{%=OW.DB.getFieldValueBySQL("SELECT [urlpath] FROM ow_category WHERE cate_id=3 AND "& OW.DB.auxSQL &"")%}/">查看更多</a></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <!--案例-->
+    <div class="ow-idx-case" id="ow_case_section">
+        <div class="wrapper">
+            <div class="header">
+                <h2 class="title">{%=OW.DB.getFieldValueBySQL("SELECT [name] FROM ow_category WHERE cate_id=4 AND "& OW.DB.auxSQL &"")%}</h2>
+                <div class="summary">{ow:index-case-summary}</div>
+            </div>
+            <div class="section" id="cases">
+                <div class="case-wrapper">
+                    {content top="20" position_id="3" model="case"}
+                    <ul class="caselist">
+                    {content:loop}
+                        <li class="li[content:i]">
+                            <a href="[content:link]">
+                            <div class="thumb"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]"></div>
+                            <div class="info">
+                                <h3 class="title">[content:title]</h3>
+                                <div class="subtitle">[content:subtitle]</div>
+                            </div>
+                            </a>
+                        </li>
+                    {/content:loop}
+                    </ul>
+                    {/content}
+                </div>
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>
+            <div class="ow-idx-more"><a href="{$site_hurl}{%=OW.DB.getFieldValueBySQL("SELECT [urlpath] FROM ow_category WHERE cate_id=4 AND "& OW.DB.auxSQL &"")%}/">查看更多</a></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <!--企业新闻-->
+    <div class="ow-idx-news" id="ow_news">
+        <div class="wrapper">
+            <h2 class="header">{%=OW.DB.getFieldValueBySQL("SELECT [name] FROM ow_category WHERE cate_id=2 AND "& OW.DB.auxSQL &"")%}</h2>
+            <div class="cates">
+                {cate top="6" parent_id="2"}
+                <ul>
+                    {cate:loop}<li name="tab" tab="[cate:i]"><a href="[cate:link]">[cate:name]</a></li>{/cate:loop}
+                </ul>
+                {/cate}
+            </div>
+            <div class="section clearfix">
+                {content top="16" position_id="1" model="news"}
+                <ul>
+                    {content:loop}
+                    <li class="li[content:i]" name="item">
+                        <div class="thumb"><a href="[content:link]"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]" /></a></div>
+                        <div class="info">
+                            <h3 class="title"><a href="[content:link]">[content:title]</a></h3>
+                            <div class="summary"><%=OW.leftString("[content:summary]",36)%><span class="raquo"><a href="[content:link]" target="_blank">»</a></span></div>
+                            <div class="datetime" name="datetime" datetime="[content:update_time]">[content:update_time]</div>
+                        </div>
+                    </li>
+                    {/content:loop}
+                </ul>
+                {/content}
+            </div>
+            <div class="ow-idx-more"><a href="{$site_hurl}{%=OW.DB.getFieldValueBySQL("SELECT [urlpath] FROM ow_category WHERE cate_id=2 AND "& OW.DB.auxSQL &"")%}/">查看更多</a></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <!--友情链接-->
+    <div class="ow-flinks" id="ow_flinks">
+        <div class="wrapper">
+            <div class="flinks">
+            <span class="heading">友情链接：</span>
+            {link table="db_links"}
+                {link:loop}<a href="[link:url]" i="[link:i]" name="link" onclick="OW.link.count([link:link_id])" target="_blank">[link:name]</a>{/link:loop}
+            {/link}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--底部-->
+<!--#include file="include.footer.html"-->
+<script type="text/javascript">
+$(document).ready(function(){
+	OW.tabSwitch({tabbar:$(".news-header"),container:$(".news-container")});
+	var $owNotice = $("#ow_notice");
+	if(OW.trim($owNotice.html())!=""){
+		var notShow = OW.int(OW.cookie.getCookie("ownoticenotshow"));
+		if(notShow==0){
+			var $dialog = new OWDialog({
+				id:'d_ow_notice',
+				title:"【网站公告】",
+				content:'<div class="ow-notice-dialog">'+$owNotice.html()+'<div>',
+				padding:"0px",
+				ok:false,
+				cancel:function(){
+					OW.cookie.setCookie("ownoticenotshow","1",1000*60*60*24*10);
+				},
+				cancelValue:"关闭，不再提示！",
+				close:false
+			});
+		};
+	}else{
+		$owNotice.remove();
+	};
+	//案例
+	var $case = $("#cases");
+	if($case.find("li").length>0){
+		$(function(){
+			var $grid   = $case;
+			var $gridUl = $grid.find('ul');
+			var $gridLi = $gridUl.find('li');
+			var liLen   = $gridLi.length;
+			var liWidth = $gridLi.outerWidth(true);
+			var $prev   = $grid.find('.prev');
+			var $next   = $grid.find('.next');
+			var viewNum    = 4;
+			var mendianNow = 0;
+			$gridUl.width(liLen*liWidth);
+			$next.click(function(){if(mendianNow<liLen-viewNum){mendianNow++; $gridUl.animate({left:-liWidth*mendianNow},500);}else{mendianNow = 0; $gridUl.animate({left:0},500);}});
+			$prev.click(function(){if(mendianNow>0){mendianNow--; $gridUl.animate({left:-liWidth*mendianNow},500);}else{mendianNow = liLen-viewNum; $gridUl.animate({left:-liWidth*(liLen-viewNum)},500);}});
+			var slideTimer = setInterval(function(){
+				if(mendianNow<liLen-viewNum){mendianNow++; $gridUl.animate({left:-liWidth*mendianNow},500);}else{mendianNow = 0; $gridUl.animate({left:0},500);}
+			},5000);
+			$grid.hover(function(){clearInterval(slideTimer);},function(){
+				slideTimer = setInterval(function(){
+					if(mendianNow<liLen-viewNum){mendianNow++; $gridUl.animate({left:-liWidth*mendianNow},500);}else{mendianNow = 0; $gridUl.animate({left:0},500);}
+				},5000);
+			});
+		});
+	}else{
+		$("#ow_case_section").hide();
+	};
+	if($("#ow_product_list").find("li").length==0){$("#ow_product").hide();};
+	if($("#ow_news").find("li[name='item']").length==0){$("#ow_news").hide();};
+	if($("#ow_flinks").find("a[name='link']").length==0){$("#ow_flinks").hide();};
+	//
+	var opt = {y:"年前",m:"个月前",w:"周前",d:"天前",h:"小时前",n:"分钟前",s:"秒前"}
+	$("div[name='datetime']").each(function(){
+		var timeText = OW.timeAgoTip(opt,$(this).attr("datetime"),"<%=SYS_TIME%>");
+		$(this).html(timeText);
+	});
+});
+</script>
+</body>
+</html>

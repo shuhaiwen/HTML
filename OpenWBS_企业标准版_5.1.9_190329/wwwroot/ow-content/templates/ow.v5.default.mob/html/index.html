@@ -1,0 +1,184 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{$title}</title>
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="apple-mobile-web-app-title" content="{$site_name}" />
+    <meta name="generator" content="openwbs {$version}" />
+    <meta name="author" content="openwbs team" />
+    <meta name="copyright" content="2008-2020 OpenWBS Inc." />
+    <!--#include file="include.css.html"-->
+    <link rel="stylesheet" href="../css/om.index.css?v={$version_sn}" />
+</head>
+<body>
+<!--头部-->
+<header class="ow-header">
+    <div class="logo"><a href="{$site_url}" title="{$site_name}"><img src="{$config(site_mobile_logo)}"  alt="{$site_name}" title="{$site_name}" /></a></div>
+    <!--#include file="include.top.nav.html"-->
+</header>
+<!--}-->
+
+<section class="mbody">
+    <div class="ow-banner">
+        <div id="banner" class="slidebox">
+            <div class="header"><ul></ul></div>
+            <div class="section">
+                <ul><%=OW.echoAdImg("1001","<li i=""{$i}""><a href=""{$link}""><img src=""{$url}"" alt=""{$name}"" title=""{$name}""></a></li>")%></ul>
+            </div>
+        </div>
+    </div>
+    <div class="ow-idx-product" id="ow_product_section">
+        <h2 class="header"><span class="ow-more"><a href="{$site_hurl}{%=OW.DB.getFieldValueBySQL("SELECT [urlpath] FROM ow_category WHERE cate_id=3 AND "& OW.DB.auxSQL &"")%}/">查看更多</a></span>{%=OW.DB.getFieldValueBySQL("SELECT [name] FROM ow_category WHERE cate_id=3 AND "& OW.DB.auxSQL &"")%}</h2>
+        <div class="cates">
+            {cate parent_id="3"}
+            <ul name="slither">
+                {cate:loop}<li class="li[cate:i]"><a href="[cate:link]">[cate:name]</a></li>{/cate:loop}
+            </ul>
+            {/cate}
+        </div>
+        <div class="section" id="products">
+            <ul class="ow-product-horizlist">
+                {content top="20" position_id="2" model="product"}
+                {content:loop}
+                <li class="li[content:i]">
+                    <a href="[content:link]">
+                        <div class="thumb"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]"></div>
+                        <div class="info">
+                            <h3 class="title">[content:ctitle]</h3>
+                            <div class="subtitle">[content:subtitle]</div>
+                        </div>
+                    </a>
+                </li>
+                {/content:loop}
+                {/content}
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="ow-idx-case" id="ow_case_section">
+        <div class="header">
+            <h2 class="title"><span class="ow-more"><a href="{$site_hurl}{%=OW.DB.getFieldValueBySQL("SELECT [urlpath] FROM ow_category WHERE cate_id=4 AND "& OW.DB.auxSQL &"")%}/">查看更多</a></span>{%=OW.DB.getFieldValueBySQL("SELECT [name] FROM ow_category WHERE cate_id=4 AND "& OW.DB.auxSQL &"")%}</h2>
+            <div class="summary">{ow:index-case-summary}</div>
+        </div>
+        <div class="cates">
+            {cate parent_id="4"}
+            <ul name="slither">
+                {cate:loop}<li class="li[cate:i]"><a href="[cate:link]">[cate:name]</a></li>{/cate:loop}
+            </ul>
+            {/cate}
+        </div>
+        <div class="section" id="cases">
+            <div class="case-wrapper">
+                {content top="20" position_id="3" model="case"}
+                <ul class="ow-case-vertilist" name="slither">
+                {content:loop}
+                    <li class="li[content:i]">
+                        <a href="[content:link]">
+                        <div class="thumb"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]"></div>
+                        <div class="info">
+                            <h3 class="title">[content:title]</h3>
+                            <div class="subtitle">[content:subtitle]</div>
+                        </div>
+                        </a>
+                    </li>
+                {/content:loop}
+                </ul>
+                {/content}
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="ow-idx-news">
+        <h2 class="header"><span class="ow-more"><a href="{$site_hurl}{%=OW.DB.getFieldValueBySQL("SELECT [urlpath] FROM ow_category WHERE cate_id=2 AND "& OW.DB.auxSQL &"")%}/">查看更多</a></span>{%=OW.DB.getFieldValueBySQL("SELECT [name] FROM ow_category WHERE cate_id=2 AND "& OW.DB.auxSQL &"")%}</h2>
+        <div class="cates">
+            {cate parent_id="2"}
+            <ul name="slither">
+                {cate:loop}<li class="li[cate:i]"><a href="[cate:link]">[cate:name]</a></li>{/cate:loop}
+            </ul>
+            {/cate}
+        </div>
+        {content top="16" position_id="1" model="news"}
+        <div class="section">
+            <ul class="ow-news-list">
+            {content:loop}
+                {if:OW.int("[content:i]")=1}
+                <li class="li[content:i] first"><a href="[content:link]"><div class="thumb"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]" /></div><h3 class="title"><span>[content:title]</span></h3></a></li>
+                {else}
+                <li class="li[content:i]"><a href="[content:link]"><div class="thumb"><img src="[content:thumbnail]" alt="[content:title]" title="[content:title]" /></div><h3 class="title">[content:title]</h3></a></li>
+                {/if}
+            {/content:loop}
+            </ul>
+        </div>
+        {/content}
+    </div>
+</section>
+<!--底部-->
+<!--#include file="include.footer.html"-->
+<!--}-->
+<script type="text/javascript">
+$(document).ready(function(){
+	//栏目菜单
+	OW.mobile.menu();
+	//banner广告
+	if(OW.int($("#banner").find("img").length)>1){
+		TouchSlide({
+			slideCell:"#banner",
+			titCell:".header ul",
+			mainCell:".section ul", 
+			effect:"leftLoop", 
+			autoPage:true,//自动分页
+			autoPlay:true,//自动播放
+			interTime:3000
+		});
+	};
+	//
+	$("ul[name='slither']").each(function(){
+		var ulWidth = 0;
+		$(this).find("li").each(function(){
+			ulWidth = ulWidth + OW.int($(this).width()) + OW.int($(this).css("padding-left")) + OW.int($(this).css("padding-right"));
+		});
+		if(ulWidth==0){
+			$(this).hide();
+		}else{
+			ulWidth = ulWidth + 10;
+		};
+		$(this).width(ulWidth);
+	});
+	//案例
+	var $case = $("#cases");
+	if($case.find("li").length==0){
+		$("#ow_case_section").hide();
+	}
+	var $products = $("#products");
+	if($products.find("li").length==0){
+		$("#ow_product_section").hide();
+	};
+});
+</script>
+<% if OS.isJWeixinCanUse then %>
+<%=OS.getWeixinTicket%>
+<script type="text/javascript">
+wx.config({
+    debug:false,appId:'<%=OS.weixinAppid%>',timestamp:'<%=OS.weixinTimestamp%>',nonceStr:'<%=OS.weixinNonceStr%>',signature:'<%=OS.weixinSignature%>',jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone']
+});
+wx.ready(function(){
+	var wxTitle = '{$title}',
+	wxDesc      = '{$description}'
+	wxLink      = OW.currentURL(),
+	wxImgUrl    = '<%=OW.validImageUrl("{$config(share_default_img)}")%>',
+	errmsg      = "<%=OS.weixinAccessTokenErrmsg%>";
+	wx.onMenuShareTimeline({title:wxTitle,link:wxLink,imgUrl:wxImgUrl});
+	wx.onMenuShareAppMessage({title:wxTitle,desc:wxDesc,link:wxLink,imgUrl:wxImgUrl});
+	wx.onMenuShareQQ({title:wxTitle,desc:wxDesc,link:wxLink,imgUrl:wxImgUrl});
+	wx.onMenuShareQZone({title:wxTitle,desc:wxDesc,link:wxLink,imgUrl:wxImgUrl});
+});
+</script>
+<% end if %>
+</body>
+</html>

@@ -1,0 +1,170 @@
+﻿@charset "utf-8";
+
+body{ background:#f4f4f4; padding-bottom:48px; }
+.body-none-nav{ padding-bottom:0px;}
+
+/*icons*/
+.ow-header .un-login,
+.ow-header .logout,
+.ow-header .menu,
+.ow-header .cart a,
+.ow-header .close a,
+.ow-header .goback{ background-image:url("../images/icons.png"); background-size:48px auto; background-repeat:no-repeat; }
+
+/*头部*/
+.ow-header{ background-color:#26293a; color:#fff; font-size:14px; height:48px; margin:auto; max-width:640px; position:relative;}
+.ow-header .logo{ float:left; width:200px; overflow:hidden;}
+.ow-header .logo img{ float:left; height:48px;}
+.ow-header .title{ border-left:1px solid #1d1f2e; font-size:16px; font-weight:normal; float:left; height:20px; line-height:20px; margin:14px 0px; max-width:180px; overflow:hidden; padding:0px 10px;}
+.ow-header .user-status{ height:48px; position:absolute; top:0px; right:0px;}
+.ow-header .un-login{ background-color:#26293a; border-right:1px solid #1d1f2e; background-position:0px -192px; display:inline-block; float:right; margin:0px 0px; height:48px; width:48px;}
+.ow-header .un-login:hover{ background-color:#1d1f2e; }
+.ow-header .user-status .username{ background-color:#26293a; border-right:1px solid #1d1f2e; display:inline-block; float:right; height:20px; line-height:20px; margin:14px 0px; max-width:100px; padding:0px 12px 0px 12px;}
+.ow-header .user-status:hover,
+.ow-header .user-status:hover a{ background-color:#1d1f2e;}
+.ow-header .user-status .logout{ display:none;}
+.ow-header .cart{ border-left:0px solid #382d3b; height:48px; position:absolute; top:0px; right:0px; width:60px;}
+.ow-header .cart a{ background-position:0px -240px; display:inline-block; height:48px; width:60px;}
+.ow-header .cart a .cart-amount{ background-color:#df0000; -webkit-border-radius:12px; -moz-border-radius:12px; border-radius:12px; display:inline-block; font-size:9px; height:12px; line-height:12px; width:12px; text-align:center; position:absolute; left:36px; top:6px; }
+.ow-header .cart a:hover{ background-color:#1d1f2e;}
+.ow-header a,
+.ow-header a:visited{ color:#fff;}
+
+/*返回*/
+.ow-header .goback{ background-position:0px -144px; display:inline-block; float:left; height:48px; width:48px;}
+.ow-header .goback:hover{ background-color:#1d1f2e; }
+/*栏目*/
+.ow-header .menu{ background-position:0px 0px; color:#fff; float:right; float:left; height:48px; width:48px;}
+.ow-header .menu,
+.ow-header .menu:visited{ text-decoration:none;}
+.ow-header .menu:hover{ background-color:#1d1f2e; }
+.ow-header .menu-section{ position:absolute; top:0px; left:0px; z-index:20; zoom:1; overflow:auto; width:100%;}
+.ow-header .close{ height:48px;}
+.ow-header .close a{ background-color:#26293a; background-position:0px -44px; display:inline-block; float:left; height:48px; line-height:48px; width:48px;}
+.ow-header .close a:hover{ background-color:#1d1f2e; }
+.ow-header ul.top-nav{ background-color:#26293a;}
+.ow-header ul.top-nav li{ border-top:1px solid #1d1f2e; font-size:16px;}
+.ow-header ul.top-nav li a{ border-left:5px solid #fa7001; display:block; height:48px; line-height:48px; min-width:130px; padding:0px 15px;}
+.ow-header ul.top-nav li a,
+.ow-header ul.top-nav li a:visited{ color:#eee; }
+.ow-header ul.top-nav li a:hover{ background:#1d1f2e; border-left:5px solid #41bc15; color:#fff; text-decoration:none;}
+
+/*底部主导航*/
+.ow-nav{ position:fixed; bottom:0px; width:100%; z-index:10;}
+.ow-nav .section{ margin:auto; max-width:640px; position:relative; }
+.ow-nav ul.base{ background-color:#fafafa; border-top:1px solid #ddd; font-size:12px; height:48px; width:100%;}
+.ow-nav ul.base li.n1{ float:left; font-size:12px; font-weight:bold; height:48px; text-align:center; width:20%; position:relative; z-index:998;}
+.ow-nav ul.base li.n1 a.n1{ background-position:center 2px; background-repeat:no-repeat; background-size:24px auto; border-left:1px solid #e6e6e6; display:block; height:24px; line-height:24px; padding:22px 0px 2px 0px;}
+.ow-nav ul.base li.n1 a.n1,
+.ow-nav ul.base li.n1 a.n1:visited{ color:#333;}
+.ow-nav ul.base li.n1 a.n1:hover,
+.ow-nav ul.base li.n1 a.n1:active{ background-color:#eee; border-left-color:#e6e6e6; text-decoration:none;}
+.ow-nav ul.base li.n1.current a.n1{ color:#fa7001; background-position:center -50px;}
+.ow-nav ul.base li.n1:first-child a.n1{ border-left:none;}
+.ow-nav ul.base li.n1 .subnav{ background:#fff; display:none; position:absolute; bottom:48px; z-index:999; -webkit-box-shadow:0px 0px 12px 0px rgba(0,0,0,0.5); -moz-box-shadow:0px 0px 12px 0px rgba(0,0,0,0.5); box-shadow:0px 0px 12px 0px rgba(0,0,0,0.5); }
+.ow-nav ul.base li.n1 .subnav ul{}
+.ow-nav ul.base li.n1 .subnav ul li{ border-bottom:1px solid #eee;}
+.ow-nav ul.base li.n1 .subnav ul li a{ display:block; font-size:15px; height:24px; line-height:24px; min-width:60px; padding:10px 15px; text-align:left; white-space:nowrap; }
+.ow-nav ul.base li.n1 .subnav ul li a,
+.ow-nav ul.base li.n1 .subnav ul li a:visited{ color:#333;}
+.ow-nav ul.base li.n1 .subnav ul li a:hover{ background:#f4f4f4; }
+.ow-nav .caret {
+    border-top:8px solid #ccc; border-right:8px solid transparent;
+    transform:scale(-1.001); transition:all 0.25s ease 0s;
+    display:inline-block; height:0; width:0; position:absolute; bottom:4px; right:4px;
+}
+
+/*底部*/
+.ow-footer{ background-color:#fff; border-top:1px solid #ddd; color:#555; font-size:11px; margin:0px auto 0px auto; max-width:610px; padding:15px 15px 15px 15px;}
+.ow-footer .footer-section{}
+.ow-footer a,
+.ow-footer a:visited{ color:#555; }
+.ow-footer a:hover{ color:#e60000; }
+
+.ow-footer .col-contact { padding:0px 0px 15px 0px; }
+.ow-footer .col-contact h3 { color:#333; font-size:16px; }
+.ow-footer .col-contact p.text1{ font-size:13px; padding:5px 0px;}
+.ow-footer .col-contact p.text2{ font-size:13px; font-weight:bold;}
+
+.ow-footer .col-cates{ border-top:1px solid #eee; padding:15px 0px 15px 0px;}
+.ow-footer .col-cates dl{ display:inline-block; float:left; width:33.333%;}
+.ow-footer .col-cates dl.item3{ margin-right:0px;}
+.ow-footer .col-cates dl dt{ color:#333; font-size:15px; padding:0px 0px 5px 0px;}
+.ow-footer .col-cates dl dd{ font-size:13px; line-height:24px; padding:4px 0px ;}
+.ow-footer .col-cates a:hover{ color:#333; text-decoration:none;}
+.ow-footer .col-cates dl.content{ float:right; width:300px;}
+.ow-footer .col-cates dl.content dt{}
+
+.ow-footer .col-qrcode{ border-bottom:1px solid #eee; padding:0px 0px 15px 0px; zoom:1; overflow:auto;}
+.ow-footer .col-qrcode img{ border:1px solid #ddd; float:left; height:120px; margin:0px 15px 0px 0px; width:120px;}
+.ow-footer .col-qrcode h3{ padding:0px 0px 5px 0px;}
+.ow-footer .col-qrcode p{}
+.ow-footer .copyright{ padding:10px 0px 0px 0px;}
+.ow-footer .icp .gov-beian{ padding-left:5px;}
+.ow-footer .icp .gov-beian img{ max-height:20px; max-width:20px; }
+.ow-footer .powered{ padding:10px 0px 0px 0px;}
+.ow-footer .powered a{ padding:0px 3px;}
+
+/*主区域*/
+.mbody{ min-height:320px; max-width:640px; margin:auto;}
+.mbody .footer{ padding:10px 0px 10px 0px; zoom:1; overflow:auto;}
+.mbody .footer .pager{ text-align:center;}
+@media (min-width:642px) {
+	.mbody,
+	.ow-footer{ border-left:1px solid #e6e6e6; border-right:1px solid #e6e6e6; }
+	.ow-nav > section{ border-left:1px solid #ddd; border-right:1px solid #ddd; }
+}
+
+/*验证码*/
+.verifycode{}
+.verifycode img{ height:36px; vertical-align:middle;}
+.verifycode .fresh{background:#f6f6f6; border:1px solid #aaa; display:inline-block; font-size:14px; height:36px; line-height:36px; width:32px; text-align:center; vertical-align:top; overflow:hidden;}
+.verifycode .fresh:hover{ text-decoration:none;}
+.verifycode .code-loading{ background:#fff url("../images/code_loading.gif") center center no-repeat; border:1px solid #aaa; display:inline-block; vertical-align:top; height:32px; width:32px; }
+
+/*弹窗用户登录*/
+.ow-loginwin{ padding:15px 0px 15px 15px;}
+.ow-loginwin .form-login{ width:218px;}
+.ow-loginwin .form-login dl dt { display:none; font-size:14px; padding:0px 10px 0px 0px;}
+.ow-loginwin .form-login dl dd { margin-bottom:6px; padding:4px 10px 0px 0px;}
+.ow-loginwin .form-login dl dd input.text{ font-size:14px; padding:3px 5px; width:190px;}
+.ow-loginwin .form-login dl dd input.text-verifycode{ width:60px;}
+.ow-loginwin .form-login dl dd .verifycode img{ height:32px; vertical-align:middle; width:80px;}
+.ow-loginwin .form-login dl dd .verifycode .fresh{background:#f6f6f6; border:1px solid #aaa; display:inline-block; font-size:14px; height:32px; line-height:32px; width:32px; text-align:center; vertical-align:top; overflow:hidden;}
+.ow-loginwin .form-login dl dd .verifycode .fresh:hover{ text-decoration:none;}
+.ow-loginwin .form-login dl.button dd{}
+.ow-loginwin .form-login dl.button dd .btn{ width:200px; padding-left:0px; padding-right:0px; text-align:center;}
+.ow-loginwin .form-login dl.remember dd{ margin-bottom:0px; text-align:right; }
+.ow-loginwin .form-login dl.remember a,
+.ow-loginwin .form-login dl.remember a:visited{ color:#888;}
+.ow-loginwin .form-login dl.remember a:hover{ color:#0070d9; text-decoration:none;}
+.ow-loginwin .form-login dl dd label.remember{ display:none;}
+.ow-loginwin .form-login dl dd .forget{ margin-right:5px;}
+.ow-loginwin .form-login dl dd .reg-member{ display:none;}
+.ow-loginwin .form-login dl dd .unlogin-buy{ display:none;}
+
+/*404错误*/
+.ow-error404{ padding:10px 20px;}
+.ow-error404 dl{}
+.ow-error404 dl dt{ font-size:18px; padding:0px 0px 5px 0px;}
+.ow-error404 dl dd.tip-1{ border-top:1px dotted #ccc; font-size:18px; padding:5px 0px;}
+.ow-error404 dl dd.tip-2{ font-size:16px; padding:5px 0px;}
+.ow-error404 dl dd.tip-en{ font-size:12px; padding:5px 0px;}
+.ow-error404 .referer{ padding:10px 0px;}
+
+/*单页详细*/
+.ow-more{ float:right; }
+.ow-more a{ font-size:12px;}
+
+/*搜索结果*/
+font.keywords{ color:#f00;}
+
+/*详细*/
+.ow-editor-content-text img{}
+.ow-editor-content-text table{ margin-bottom:10px; border-collapse:collapse; display:table; font-size:16px; }
+.ow-editor-content-text table tr.firstRow th { border-top-width: 2px;}
+.ow-editor-content-text table th{ background-color:#f7f7f7; border:1px solid #ccc; border-top:1px solid #bbb; font-weight:bold; font-size:16px; padding:5px 10px; }
+.ow-editor-content-text table td{ border:1px solid #ccc; padding:5px 10px; }
+
+
+

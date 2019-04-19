@@ -1,0 +1,105 @@
+﻿<div id="footer">
+    <div class="footer-section">
+        <div class="wrapper">
+            <div class="col-contact">{ow:contact}</div>
+            <div class="col-cates">
+                {nav type="2" parent_id="0"}
+                {nav:loop}
+                <dl class="item[nav:i]">
+                   <dt>[nav:name]</dt>
+                   {if:OW.int("[nav:children]")>0}
+                   {nav2 parent_id="[nav:nav_id]"}
+                   {nav2:loop}
+                   <dd><a href="[nav2:url]" target="[nav2:target]">[nav2:name]</a></dd>
+                   {/nav2:loop}
+                   {/nav2}
+                   {/if}
+                </dl>
+                {/nav:loop}
+                {/nav}
+            </div>
+            <div class="col-qrcode">{ow:qrcode}</div>
+        </div>
+    </div>
+    <div class="powered-by">
+        <div class="wrapper">
+            <!--以下是版权信息，购买商业授权之后方可去除！-->
+            <span class="powered">本站由<a href="http://www.openwbs.com" title="企业建站系统" target="_blank">OpenWBS企业建站系统 {$version}</a>提供技术支持 Processed in {$runtime}s</span>
+            <!--版权信息结束-->
+            <div class="copyright">Copyright &copy; <a href="{$site_url}" target="_blank">{$site_name}</a> 2019-2020 ALL Rights Reserved <span class="icp"><a href="http://www.miitbeian.gov.cn" rel="nofollow" target="_blank">{$icp}</a></span><span class="gov-beian">{$gov_beian}</span><span class="stat">{$statistics}</span></div>
+        </div>
+    </div>
+</div>
+<div class="ow-floater" id="ow_floater"><a class="top" href="javascript:;" title="返回顶部"></a><a class="feedback" href="{$site_hurl}form/feedback.html" title="在线反馈"></a><a class="faq" href="{$site_hurl}faq/" title="常见问题"></a></div>
+<script type="text/javascript">
+$(document).ready(function(){
+	//网站导航
+	$("#main_nav li.n1").hover(
+		function(){
+			$(this).addClass("hover");
+			$(this).find("div.subnav").show();
+		},
+		function(){
+			$(this).removeClass("hover");
+			$(this).find("div.subnav").hide();
+		}
+	);
+	$("#main_nav li.n2").hover(
+		function(){
+			$(this).addClass("hover");
+			$(this).find("div.sub3-nav").show();
+		},
+		function(){
+			$(this).removeClass("hover");
+			$(this).find("div.sub3-nav").hide();
+		}
+	);
+	//**当前导航
+	$("#main_nav").find("li").each(function(){
+		var url = $(this).attr("url"),
+		href    = window.location.href;
+		if(!OW.isNull(url)){
+			if(OW.runMode>0){
+				var len = href.length-url.length;
+				if(href.indexOf(url)>-1 && href.indexOf(url)==len){
+					//alert("href="+ href +"|"+ href.indexOf(url) +" : url="+ url +"|"+ len);
+					$(this).addClass("current");
+					return false;
+				};
+			}else{
+				var para = href.split("?")[1] || "";
+				if(OW.isNull(para)){
+					$("#main_nav").find("li:first").addClass("current");
+					return false;
+				};
+				if(href.split("?")[1] == url.split("?")[1]){
+					$(this).addClass("current");
+					return false;
+				};
+			};
+		};
+    });
+	//在线客服(mini:迷你模式,list:展开模式)
+	OW.client.serviceOnline({open:'{$service_online_open}',data:'{$service_online}',initType:'{if:OW.int("{$service_online_init_type_pc}")=0}list{else}mini{/if}'});
+	//用户登录状态
+	OW.member.userStatus({userStatusSection:$("#user_status")});
+	//购物车
+	OW.shop.cartInit({
+		cartAmountSection:$("span[name='cart_amount']")
+	});
+	//返回顶部
+	var $owFloater = $("#ow_floater"),
+	$top = $owFloater.find("a.top").hide();
+	$(window).scroll(function(){
+		var top = parseInt(document.body.scrollTop || document.documentElement.scrollTop);
+		if(top<20){
+			$top.hide(100);
+		}else{
+			$top.show(100);
+		}
+	});
+	OW.scrollTop($top);
+});
+</script>
+{if:OW.int("{$kefu_open}")=1}{$kefu}{/if}
+{$site_aux_footerjs}

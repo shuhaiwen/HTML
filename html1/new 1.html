@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style type="text/css">
+.eyes{
+perspective: 500px;
+}
+.box{
+/*设置3D效果*/
+transform-style: preserve-3d;
+/*盒子的大小*/
+width: 200px;
+height: 200px;
+/*background: red;*/
+/*设置盒子的位置，便于观察*/
+margin: 400px auto;
+/*复合方式设置动画 三者分别为：动画名 执行一次时间 执行方式*/
+animation: zhuan 4s ease;
+/*令动画无限执行下去*/
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
+.box div{
+width: 200px;
+height: 200px;
+opacity: 0.5;
+/*设置过渡*/
+transition: all 3s ease 0s;
+position: absolute;
+}
+/*调整位置，制作成一个六边形*/
+.box .div1{
+background: blue;
+transform: translateZ(100px);
+}
+
+.box .div2{
+background: green;
+transform: translateZ(-100px);
+}
+.box .div3{
+background: yellow;
+transform: rotateX(90deg) translateZ(100px);
+}
+.box .div4{
+background: green;
+transform: rotateX(270deg) translateZ(100px);
+}
+.box .div5{
+background: gray;
+transform: rotateY(-90deg) translateZ(100px);
+}
+.box .div6{
+background: brown;
+transform: rotateY(90deg) translateZ(100px);
+}
+/*添加3D旋转效果 让其绕X、Y轴同时旋转90度*/
+@keyframes zhuan{
+from{
+transform: rotateX(0deg) rotateY(0deg);
+}
+to{
+transform: rotateX(360deg) rotateY(360deg);
+}
+}
+/*给正方体添加一个hover效果*/
+.box:hover .div1{
+transform: translateZ(200px);
+}
+.box:hover .div2{
+transform: translateZ(-200px);
+}
+.box:hover .div3{
+transform: rotateX(90deg) translateZ(200px);
+}
+.box:hover .div4{
+transform: rotateX(270deg) translateZ(200px);
+}
+.box:hover .div5{
+transform: rotateY(-90deg) translateZ(200px);
+}
+.box:hover .div6{
+transform: rotateY(90deg) translateZ(200px)
+}
+/* inner cube */
+i{
+  position:absolute;
+  top:50px;
+  left:50px;
+  width:100px;
+  height:100px;
+  display:block;
+  background:url(img/cube.png);
+  transition: all 1s linear;
+}
+i.front{
+  transform: translateZ(50px);
+}
+i.back{
+  transform: translateZ(-50px) rotateY(180deg);
+}
+i.bottom{
+  transform:rotateX(-90deg) translateY(50px);
+  transform-origin: left bottom;
+}
+i.left{
+  transform:rotateY(270deg) translateX(-50px);
+  transform-origin: center left;
+}
+i.right{
+  transform:rotateY(-270deg) translateX(50px);
+  transform-origin: top right;
+}
+i.top{
+  transform:rotateX(-270deg) translateY(-50px);
+  transform-origin: left top;
+}
+.box:hover i{
+  top:-200px;
+}
+</style>
+</head>
+<body>
+  <div class="eyes">
+    <div class="box">
+      <div class="div1"></div>
+      <div class="div2"></div>
+      <div class="div3"></div>
+      <div class="div4"></div>
+      <div class="div5"></div>
+      <div class="div6"></div>
+      <i class="front"></i>
+      <i class="back"></i>
+      <i class="top"></i>
+      <i class="bottom"></i>
+      <i class="left"></i>
+      <i class="right"></i>
+    </div>
+  </div>
+</body>
+</html>
